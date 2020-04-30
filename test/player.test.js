@@ -1,13 +1,21 @@
-import player from '../src/player';
+import Player from '../src/player';
 
-it('Returns an object', () => {
-  expect().toBe();
-});
+const pl = Player('Nick', 'X');
 
-it('Player has name', () => {
-  expect().toBe();
-});
+describe('The player should be complete', () => {
+  it('Returns an object', () => {
+    expect(typeof pl).toBe('object');
+  });
 
-it('Player starts with zero points', () => {
-  expect().toBe();
+  it('Player has name', () => {
+    expect(pl.getName()).toBe('Nick');
+  });
+
+  test('Player has a marker', () => {
+    expect(pl.getMarker()).toBe('X');
+  });
+
+  it('Player starts with zero points', () => {
+    expect(pl.updateScore()).toEqual(1);
+  });
 });
