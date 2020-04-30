@@ -3,8 +3,7 @@ const Player = (name, marker) => {
 
   const getName = () => name;
   const getMarker = () => marker;
-  // eslint-disable-next-line no-plusplus
-  const updateScore = () => points++;
+  const updateScore = () => (points += 1);
   return { getName, getMarker, updateScore };
 };
 

@@ -84,9 +84,9 @@ const controller = ((view) => {
     let winner = false;
     winConditions.forEach((row) => {
       if (
-        board[row[0]] === board[row[1]]
-        && board[row[1]] === board[row[2]]
-        && (board[row[0]] === 'X' || board[row[0]] === 'O')
+        board[row[0]] === board[row[1]] &&
+        board[row[1]] === board[row[2]] &&
+        (board[row[0]] === 'X' || board[row[0]] === 'O')
       ) {
         winner = true;
         view.showWinningComb(row);
@@ -100,6 +100,7 @@ const controller = ((view) => {
     p1 = Player(getNames()[0], 'X');
     p2 = Player(getNames()[1], 'O');
     currentPlayer = p1;
+    console.log(p1.getName());
     view.showPlayerNames(p1, p2);
     highlightPlayer();
     view.displayBoard(t);
