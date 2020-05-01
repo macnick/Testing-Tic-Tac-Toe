@@ -5,6 +5,7 @@
 import Player from './player.js';
 import Table from './board.js';
 import view from './view.js';
+import winner from './winner';
 
 // self-contained module
 const controller = ((view) => {
@@ -54,11 +55,11 @@ const controller = ((view) => {
       t.t[e.target.id] = currentPlayer.getMarker();
       // here we check if we have a winning move. Currently just console.log the name
       view.displayBoard(t);
-      if (checkWinner(t.t)) {
+      if (winner.checkWinner(t.t)) {
         const msg = `Winner is ${currentPlayer.getName()}!`;
         view.showModal(msg);
         game = false;
-      } else if (checkTie()) {
+      } else if (winner.checkTie(t)) {
         const msg = 'It is a tie!';
         view.showModal(msg);
       }
@@ -68,39 +69,11 @@ const controller = ((view) => {
     }
   };
 
-  const checkTie = () => t.t.every((pos) => pos != null);
-
-  const checkWinner = (board) => {
-    const winConditions = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [6, 4, 2],
-    ];
-    let winner = false;
-    winConditions.forEach((row) => {
-      if (
-        board[row[0]] === board[row[1]] &&
-        board[row[1]] === board[row[2]] &&
-        (board[row[0]] === 'X' || board[row[0]] === 'O')
-      ) {
-        winner = true;
-        view.showWinningComb(row);
-      }
-    });
-    return winner;
-  };
-
   const resetBoard = () => {
     t = Table();
     p1 = Player(getNames()[0], 'X');
     p2 = Player(getNames()[1], 'O');
     currentPlayer = p1;
-    console.log(p1.getName());
     view.showPlayerNames(p1, p2);
     highlightPlayer();
     view.displayBoard(t);
@@ -110,6 +83,4 @@ const controller = ((view) => {
 
   addListeners(t);
   view.displayBoard(t);
-
-  return { t, currentPlayer, resetBoard };
 })(view);
