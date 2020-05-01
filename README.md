@@ -8,8 +8,9 @@ Additional description about the project and its features.
 
 ## Built With
 
-- Javascript ES6,
-- jest
+- Javascript ES6
+- Webpack
+- Jest
 
 ## Getting Started
 
