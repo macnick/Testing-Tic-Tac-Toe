@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+
 import winner from '../src/winner';
 
 const board = ['X', null, 'X', 'O', 'O', 'X', 'X', null, 'O'];

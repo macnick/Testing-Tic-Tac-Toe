@@ -15,9 +15,9 @@ const winner = (() => {
     let winner = false;
     winConditions.forEach((row) => {
       if (
-        board[row[0]] === board[row[1]] &&
-        board[row[1]] === board[row[2]] &&
-        (board[row[0]] === 'X' || board[row[0]] === 'O')
+        board[row[0]] === board[row[1]]
+        && board[row[1]] === board[row[2]]
+        && (board[row[0]] === 'X' || board[row[0]] === 'O')
       ) {
         winner = true;
         view.showWinningComb(row);
