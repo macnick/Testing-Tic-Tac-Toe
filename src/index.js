@@ -110,5 +110,7 @@ const controller = ((view) => {
   addListeners(t);
   view.displayBoard(t);
 
-  return { t, currentPlayer, resetBoard };
+  return { checkWinner };
 })(view);
+
+export default controller;
