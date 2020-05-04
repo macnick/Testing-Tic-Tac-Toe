@@ -1,0 +1,42 @@
+{
+  "name": "testing-tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Javascript Tic-Tac-Toe game with unit tests",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^25.5.1",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "jest": "^25.5.3",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macnick/Testing-Tic-Tac-Toe.git"
+  },
+  "keywords": [
+    "Javascript",
+    "testing",
+    "tic-tac-toe",
+    "game",
+    "jest",
+    "webpack"
+  ],
+  "author": "Nick Haralampopoulos, Daniel Addo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/macnick/Testing-Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/macnick/Testing-Tic-Tac-Toe#readme",
+  "directories": {
+    "test": "test"
+  }
+}
